@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: gitlab-mirror
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        with:
+          source-repo: 'git@github.com:aimeepsutton/core-v-verif.git'
+          destination-repo: 'git@gitlab.openhwgroup.metrics.ca:metrics-pe/github-ci-test.git'
+
