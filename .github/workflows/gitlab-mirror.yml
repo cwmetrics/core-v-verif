@@ -25,6 +25,7 @@ jobs:
     needs: git-mirror
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - run: ./metrics-regress.py cv32_ci_check_regression cv32e40p_verif_3-core-v-verif
         env:
           METRICS_CI_TOKEN: ${{ secrets.METRICS_CI_TOKEN }}
