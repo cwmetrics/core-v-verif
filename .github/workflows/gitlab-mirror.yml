@@ -21,4 +21,12 @@ jobs:
         with:
           source-repo: 'git@github.com:aimeepsutton/core-v-verif.git'
           destination-repo: 'git@gitlab.openhwgroup.metrics.ca:metrics-pe/github-ci-test.git'
+  metrics-regression:
+    needs: git-mirror
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          METRICS_CI_TOKEN: ${{ secrets.METRICS_CI_TOKEN }}
+	run: ./metrics-regress.py cv32_ci_check_regression cv32e40p_verif_3-core-v-verif
+	shell: bash
 
