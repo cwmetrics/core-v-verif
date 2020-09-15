@@ -93,12 +93,14 @@ print('================')
 print('Functional: ' + str(math.trunc(regressionData['functionalCoverage']*100)/100))
 if regressionData['assertionCoverage'] is not None:
     print('Assertion: ' + str(math.trunc(regressionData['assertionCoverage']*100) /100))
+if regressionData['lineCoverage'] is not None:
+    print('Code (block): ' + str(math.trunc(regressionData['lineCoverage']*100) /100))
 print('\n')
 
-print('Full results at: https://'+ os.environ['CLIENT'] + '.metrics.ca/' + args.projectId + \
+print('Full results at: https://openhwgroup.metrics.ca/' + args.projectId + \
       '/results/regressionRuns/' + regressionRunId)
       
-## Set the exit code to be used by gitlab-ci
+## Set the exit code to be used by github action
 if regressionData['testRuns']['failed'] > 0 or \
    regressionData['testRuns']['incomplete'] > 0:
     print('One or more tests has failed/is incomplete. Exit with code 1.')
