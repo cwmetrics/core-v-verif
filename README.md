@@ -1,5 +1,5 @@
 # core-v-verif
-Functional verification project for the CORE-V family of RISC-V cores. This project is under active development.
+Functional verification project for the CORE-V family of RISC-V cores. This project is under active development!
 
 ## NEWS UPDATES:
 **2020-09-04**: a new (and _much_ better) method of specifying and organizating test-programs and simulations is now merged in.  See slide "_Test Specification Updates_" in the [2020-08-31 CV32E40P project update](https://github.com/openhwgroup/core-v-docs/blob/master/verif/MeetingPresentations/20200831-CV32E40P-ProjectScheduleUpdate.pptx).
