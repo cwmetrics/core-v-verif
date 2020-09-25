@@ -26,7 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: ./metrics-regress.py cv32_ci_check_regression metrics-pe_github-ci-test
+      - run: ./metrics-regress.py cv32_ci_check_regression metrics-pe-GitHub-CI-test
         env:
           METRICS_CI_TOKEN: ${{ secrets.METRICS_CI_TOKEN }}
         shell: bash
